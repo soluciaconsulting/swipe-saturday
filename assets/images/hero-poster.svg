@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" role="img" aria-hidden="true">
+<defs>
+<linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" stop-color="#1a1a1a"/>
+<stop offset="55%" stop-color="#111111"/>
+<stop offset="100%" stop-color="#0a2a3d"/>
+</linearGradient>
+<linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+<stop offset="0%" stop-color="#1D9BF0" stop-opacity="0.55"/>
+<stop offset="100%" stop-color="#1D9BF0" stop-opacity="0"/>
+</linearGradient>
+</defs>
+<rect width="1920" height="1080" fill="url(#g)"/>
+<rect width="1920" height="1080" fill="url(#accent)"/>
+
+<circle cx="1830" cy="90" r="34" fill="none" stroke="#1D9BF0" stroke-width="2" opacity="0.35"/>
+<polygon points="1816,74 1816,106 1844,90" fill="#1D9BF0" opacity="0.6"/>
+<text x="60" y="1040" text-anchor="start" font-family="Inter, Helvetica, Arial, sans-serif" font-size="28" font-weight="600" fill="#F5F5F5" opacity="0.22" letter-spacing="3">HERO REEL — PLACEHOLDER FOOTAGE</text>
+
+</svg>

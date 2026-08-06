@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <script>document.documentElement.classList.replace("no-js", "js");</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Swipe Saturday® Content Production, Des Moines</title>
+  <meta name="description" content="Browse Swipe Saturday's portfolio of retail, event, drone, product and destination marketing content produced for brands across the Midwest." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.swipesaturday.com/portfolio.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Swipe Saturday®" />
+  <meta property="og:title" content="Portfolio — Swipe Saturday®" />
+  <meta property="og:description" content="Retail, event, drone, product and destination marketing content produced for brands across the Midwest." />
+  <meta property="og:image" content="https://www.swipesaturday.com/assets/images/portfolio-hero-poster.svg" />
+  <meta property="og:url" content="https://www.swipesaturday.com/portfolio.html" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Portfolio — Swipe Saturday®" />
+  <meta name="twitter:description" content="Retail, event, drone, product and destination marketing content produced for brands across the Midwest." />
+  <meta name="twitter:image" content="https://www.swipesaturday.com/assets/images/portfolio-hero-poster.svg" />
+
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/icons/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.swipesaturday.com/index.html" },
+      { "@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://www.swipesaturday.com/portfolio.html" }
+    ]
+  }
+  </script>
+</head>
+<body data-page="portfolio">
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <div data-include="header"></div>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Portfolio</span>
+        </nav>
+        <p class="eyebrow">Selected Work</p>
+        <h1 class="h1">Content built to perform, not just look good.</h1>
+        <p class="text-lead" style="margin-top: var(--space-3); max-width: 56ch;">
+          Retail campaigns, live events, aerial cinematography and destination
+          films — every project starts with a business goal, not a shot list.
+        </p>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container">
+        <div class="filter-bar" data-filter-bar role="group" aria-label="Filter projects by category">
+          <button type="button" class="filter-btn is-active" data-filter="all" aria-pressed="true">All Work</button>
+          <button type="button" class="filter-btn" data-filter="retail" aria-pressed="false">Retail</button>
+          <button type="button" class="filter-btn" data-filter="events" aria-pressed="false">Events</button>
+          <button type="button" class="filter-btn" data-filter="drone" aria-pressed="false">Drone</button>
+          <button type="button" class="filter-btn" data-filter="products" aria-pressed="false">Products</button>
+          <button type="button" class="filter-btn" data-filter="destination" aria-pressed="false">Destination</button>
+        </div>
+
+        <div class="portfolio-grid" data-projects="grid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-band" data-reveal-scale>
+          <h2 class="h2">Let's create something incredible.</h2>
+          <p>Have a project in mind? Tell us about it and we'll put together a plan built around your goals.</p>
+          <div class="cta-band-actions">
+            <span data-magnetic>
+              <a href="contact.html" class="btn btn-accent btn-lg">Let's Work Together</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="footer"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

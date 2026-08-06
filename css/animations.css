@@ -1,0 +1,82 @@
+/* ==========================================================================
+   Swipe Saturday — Animation primitives
+   GSAP drives the timelines; these classes define the CSS start/end states
+   so content never "pops" before JS initializes (progressive enhancement).
+   ========================================================================== */
+
+/* Reveal-on-scroll base states — GSAP flips these via inline styles,
+   but we set sane defaults here so no-JS / slow-JS still shows content. */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.no-js [data-reveal],
+.gsap-ready [data-reveal] {
+  opacity: 1;
+  transform: none;
+}
+
+[data-reveal-scale] {
+  opacity: 0;
+  transform: scale(0.92);
+}
+
+.no-js [data-reveal-scale] {
+  opacity: 1;
+  transform: none;
+}
+
+/* Split text line mask */
+.split-line {
+  overflow: hidden;
+  display: block;
+}
+
+.split-line > span {
+  display: inline-block;
+  will-change: transform;
+}
+
+/* Fade-up utility (non-GSAP, e.g. reduced-motion fallback or simple cases) */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: none; }
+}
+
+.animate-fade-up {
+  animation: fadeUp var(--duration-slow) var(--ease-out) both;
+}
+
+/* Kinetic underline used for magnetic/hoverable text links */
+.magnetic-target {
+  display: inline-block;
+  will-change: transform;
+}
+
+/* Parallax containers need overflow control */
+[data-parallax] {
+  will-change: transform;
+}
+
+/* Image/video zoom-on-scroll containers */
+.zoom-on-scroll {
+  overflow: hidden;
+}
+
+.zoom-on-scroll img,
+.zoom-on-scroll video {
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal],
+  [data-reveal-scale] {
+    opacity: 1;
+    transform: none;
+  }
+
+  .marquee-track {
+    animation: none;
+  }
+}

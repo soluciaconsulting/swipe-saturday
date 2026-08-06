@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-hidden="true">
+<defs>
+<linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" stop-color="#1a1a1a"/>
+<stop offset="55%" stop-color="#111111"/>
+<stop offset="100%" stop-color="#0a2a3d"/>
+</linearGradient>
+<linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+<stop offset="0%" stop-color="#1D9BF0" stop-opacity="0.55"/>
+<stop offset="100%" stop-color="#1D9BF0" stop-opacity="0"/>
+</linearGradient>
+</defs>
+<rect width="1200" height="800" fill="url(#g)"/>
+<rect width="1200" height="800" fill="url(#accent)"/>
+
+<circle cx="1110" cy="90" r="34" fill="none" stroke="#1D9BF0" stroke-width="2" opacity="0.6"/>
+<polygon points="1096,74 1096,106 1124,90" fill="#1D9BF0" opacity="0.9"/>
+<text x="60" y="710" font-family="Inter, Helvetica, Arial, sans-serif" font-size="54" font-weight="700" fill="#F5F5F5">Von Maur</text>
+<text x="60" y="742" font-family="Inter, Helvetica, Arial, sans-serif" font-size="25" font-weight="400" fill="#9a9a9a" letter-spacing="0.5">GALLERY 02</text>
+<text x="60" y="70" font-family="Inter, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1D9BF0" letter-spacing="3">SWIPE SATURDAY</text>
+
+</svg>

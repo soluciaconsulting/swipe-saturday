@@ -1,0 +1,161 @@
+/* ==========================================================================
+   Swipe Saturday — Typography
+   ========================================================================== */
+
+body {
+  font-family: var(--font-primary);
+  font-size: var(--fs-body);
+  color: var(--color-text);
+  font-weight: var(--fw-regular);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-tight);
+  line-height: var(--lh-tight);
+  color: var(--color-text);
+}
+
+.text-on-dark h1,
+.text-on-dark h2,
+.text-on-dark h3,
+.text-on-dark p,
+.section--dark h1,
+.section--dark h2,
+.section--dark h3,
+.section--dark h4,
+.hero-content h1,
+.hero-content h2,
+.hero-content h3,
+.mobile-menu h1,
+.mobile-menu h2,
+.mobile-menu h3 {
+  color: var(--color-text-on-dark);
+}
+
+/* Restore the brighter brand accent for eyebrow/accent text specifically
+   inside dark contexts, where it has excellent contrast against near-black
+   and reads better than the darkened light-background shade. */
+.text-on-dark .eyebrow,
+.section--dark .eyebrow,
+.hero-content .eyebrow,
+.cta-band .eyebrow,
+.mobile-menu .eyebrow,
+.site-footer .eyebrow,
+.text-on-dark .text-accent,
+.section--dark .text-accent,
+.cta-band .text-accent {
+  color: var(--color-accent);
+}
+
+.hero-title,
+.h1 {
+  font-size: var(--fs-hero);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+  font-weight: var(--fw-bold);
+}
+
+.h2,
+.section-title {
+  font-size: var(--fs-heading);
+  line-height: var(--lh-snug);
+}
+
+.h3 {
+  font-size: var(--fs-section);
+  line-height: var(--lh-snug);
+}
+
+.h4 {
+  font-size: 1.25rem;
+  line-height: var(--lh-snug);
+  font-weight: var(--fw-semibold);
+}
+
+p {
+  color: var(--color-text-secondary);
+  line-height: var(--lh-relaxed);
+}
+
+.text-lead {
+  font-size: var(--fs-body-lg);
+  line-height: var(--lh-relaxed);
+  color: var(--color-text-secondary);
+}
+
+.text-small {
+  font-size: var(--fs-small);
+}
+
+.text-micro {
+  font-size: var(--fs-micro);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--fs-micro);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  /* var(--color-accent) is ~3:1 against white — fails WCAG AA for text at
+     this size. The darker shade passes 4.5:1+ on light backgrounds; dark
+     contexts (hero, section--dark, etc.) restore the brighter brand accent
+     below, where its contrast against near-black is already excellent. */
+  color: var(--color-accent-dark);
+}
+
+.eyebrow::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+strong,
+b {
+  font-weight: var(--fw-semibold);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-secondary {
+  color: var(--color-text-secondary);
+}
+
+.text-accent {
+  color: var(--color-accent-dark);
+}
+
+a.link-underline {
+  position: relative;
+  display: inline-block;
+}
+
+a.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--duration-base) var(--ease-out);
+}
+
+a.link-underline:hover::after,
+a.link-underline:focus-visible::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}

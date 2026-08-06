@@ -1,0 +1,13 @@
+/* ==========================================================================
+   Swipe Saturday — Stylesheet entry point
+   Import order matters: tokens → reset → type → layout → components →
+   animation states → responsive overrides (last, so it always wins).
+   ========================================================================== */
+
+@import url("variables.css");
+@import url("reset.css");
+@import url("typography.css");
+@import url("layout.css");
+@import url("components.css");
+@import url("animations.css");
+@import url("responsive.css");

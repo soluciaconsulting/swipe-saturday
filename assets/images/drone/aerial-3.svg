@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 933" width="1400" height="933" role="img" aria-hidden="true">
+<defs>
+<linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" stop-color="#1a1a1a"/>
+<stop offset="55%" stop-color="#111111"/>
+<stop offset="100%" stop-color="#0a2a3d"/>
+</linearGradient>
+<linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+<stop offset="0%" stop-color="#1D9BF0" stop-opacity="0.55"/>
+<stop offset="100%" stop-color="#1D9BF0" stop-opacity="0"/>
+</linearGradient>
+</defs>
+<rect width="1400" height="933" fill="url(#g)"/>
+<rect width="1400" height="933" fill="url(#accent)"/>
+
+<circle cx="1310" cy="90" r="34" fill="none" stroke="#1D9BF0" stroke-width="2" opacity="0.6"/>
+<polygon points="1296,74 1296,106 1324,90" fill="#1D9BF0" opacity="0.9"/>
+<text x="60" y="843" font-family="Inter, Helvetica, Arial, sans-serif" font-size="63" font-weight="700" fill="#F5F5F5">Real Estate</text>
+<text x="60" y="875" font-family="Inter, Helvetica, Arial, sans-serif" font-size="29" font-weight="400" fill="#9a9a9a" letter-spacing="0.5">FAA PART 107</text>
+<text x="60" y="70" font-family="Inter, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1D9BF0" letter-spacing="3">SWIPE SATURDAY</text>
+
+</svg>

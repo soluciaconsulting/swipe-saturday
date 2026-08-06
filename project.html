@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <script>document.documentElement.classList.replace("no-js", "js");</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project — Swipe Saturday®</title>
+  <meta name="description" content="A Swipe Saturday content production case study." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.swipesaturday.com/project.html" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Swipe Saturday®" />
+  <meta property="og:title" content="Project — Swipe Saturday®" />
+  <meta property="og:description" content="A Swipe Saturday content production case study." />
+  <meta property="og:image" content="https://www.swipesaturday.com/assets/images/og-image.svg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Project — Swipe Saturday®" />
+  <meta name="twitter:description" content="A Swipe Saturday content production case study." />
+  <meta name="twitter:image" content="https://www.swipesaturday.com/assets/images/og-image.svg" />
+
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/icons/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="portfolio">
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <div data-include="header"></div>
+
+  <main id="main" data-project-page>
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="portfolio.html">Portfolio</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Project</span>
+        </nav>
+        <p class="eyebrow" data-project-eyebrow>Loading…</p>
+        <h1 class="h1" data-project-title>Loading project…</h1>
+        <p class="text-lead" style="margin-top: var(--space-3); max-width: 60ch;" data-project-description></p>
+      </div>
+
+      <div class="container">
+        <div class="page-hero-media zoom-on-scroll" data-reveal-scale>
+          <video
+            data-lazy
+            data-project-hero-video
+            controls
+            playsinline
+            muted
+            loop
+            aria-label="Project hero video"
+          ></video>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="split split--asymmetric">
+          <div>
+            <h2 class="h3">Overview</h2>
+            <p style="margin-top: var(--space-2);" data-project-overview></p>
+
+            <h2 class="h3" style="margin-top: var(--space-6);">Objective</h2>
+            <p style="margin-top: var(--space-2);" data-project-objective></p>
+
+            <h2 class="h3" style="margin-top: var(--space-6);">Deliverables</h2>
+            <ul class="flex-col gap-2" style="margin-top: var(--space-2);" data-project-deliverables></ul>
+          </div>
+
+          <aside>
+            <dl class="meta-list" data-project-meta></dl>
+            <div style="margin-top: var(--space-5);">
+              <h3 class="h4" style="margin-bottom: var(--space-2);">Tags</h3>
+              <div class="tag-list" data-project-tags></div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <p class="eyebrow">Impact</p>
+          <h2 class="h2">Results</h2>
+        </div>
+        <div class="result-grid" data-project-results></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Behind The Scenes</p>
+          <h2 class="h2">Gallery</h2>
+        </div>
+        <div class="gallery-grid" data-project-gallery></div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">More Work</p>
+          <h2 class="h2">Related Projects</h2>
+        </div>
+        <div class="project-grid" data-related-projects></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-band" data-reveal-scale>
+          <h2 class="h2">Let's create something incredible.</h2>
+          <p>Like what you see? Let's talk about what this could look like for your brand.</p>
+          <div class="cta-band-actions">
+            <span data-magnetic>
+              <a href="contact.html" class="btn btn-accent btn-lg">Let's Work Together</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="footer"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

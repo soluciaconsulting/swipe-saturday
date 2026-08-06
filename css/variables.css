@@ -1,0 +1,101 @@
+/* ==========================================================================
+   Swipe Saturday — Design Tokens
+   Single source of truth for color, type, spacing, motion and layout.
+   ========================================================================== */
+
+:root {
+  /* ---- Color ---- */
+  --color-bg: #ffffff;
+  --color-bg-alt: #f5f5f5;
+  --color-text: #111111;
+  --color-text-secondary: #666666;
+  --color-accent: #1d9bf0;
+  --color-accent-dark: #0f6aa8; /* passes 4.5:1+ as text against both #fff and #f5f5f5 */
+  --color-border: #eaeaea;
+  --color-ink: #0a0a0a;
+  --color-overlay-strong: rgba(10, 10, 10, 0.72);
+  --color-overlay-soft: rgba(10, 10, 10, 0.32);
+  --color-white: #ffffff;
+
+  /* Dark surfaces (hero, footer, CTA bands) */
+  --color-surface-dark: #0a0a0a;
+  --color-surface-dark-alt: #141414;
+  --color-text-on-dark: #f5f5f5;
+  --color-text-on-dark-secondary: #a3a3a3;
+  --color-border-on-dark: rgba(255, 255, 255, 0.12);
+
+  /* ---- Typography ---- */
+  --font-primary: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --fs-hero: clamp(2.75rem, 3.2rem + 3vw, 4.5rem);       /* 72px desktop */
+  --fs-heading: clamp(2.25rem, 2rem + 1.6vw, 3rem);       /* 48px desktop */
+  --fs-section: clamp(1.5rem, 1.3rem + 1vw, 2rem);        /* 32px desktop */
+  --fs-body-lg: clamp(1.05rem, 1rem + 0.3vw, 1.125rem);   /* 18px desktop */
+  --fs-body: 1rem;                                        /* 16px */
+  --fs-small: 0.9375rem;                                  /* 15px */
+  --fs-micro: 0.8125rem;                                  /* 13px */
+
+  --lh-tight: 1.05;
+  --lh-snug: 1.2;
+  --lh-normal: 1.5;
+  --lh-relaxed: 1.7;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  --ls-tight: -0.03em;
+  --ls-normal: 0;
+  --ls-wide: 0.08em;
+  --ls-wider: 0.18em;
+
+  /* ---- Spacing scale (base 8px) ---- */
+  --space-1: 0.5rem;   /* 8 */
+  --space-2: 1rem;     /* 16 */
+  --space-3: 1.5rem;   /* 24 */
+  --space-4: 2rem;     /* 32 */
+  --space-5: 2.5rem;   /* 40 */
+  --space-6: 3rem;     /* 48 */
+  --space-7: 4rem;     /* 64 */
+  --space-8: 5rem;     /* 80 */
+  --space-9: 6rem;     /* 96 */
+  --space-10: 8rem;    /* 128 */
+  --space-11: 10rem;   /* 160 */
+
+  /* ---- Layout ---- */
+  --container-width: 1280px;
+  --container-padding: clamp(1.25rem, 4vw, 3rem);
+  --grid-columns: 12;
+  --grid-gap: 1.5rem;
+
+  /* ---- Radius ---- */
+  --radius-sm: 8px;
+  --radius: 16px;
+  --radius-lg: 24px;
+  --radius-full: 999px;
+
+  /* ---- Shadow ---- */
+  --shadow-sm: 0 2px 8px rgba(17, 17, 17, 0.04);
+  --shadow-md: 0 8px 30px rgba(17, 17, 17, 0.08);
+  --shadow-lg: 0 20px 60px rgba(17, 17, 17, 0.12);
+  --shadow-focus: 0 0 0 3px rgba(29, 155, 240, 0.45);
+
+  /* ---- Motion ---- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast: 0.2s;
+  --duration-base: 0.4s;
+  --duration-slow: 0.8s;
+
+  /* ---- Z-index scale ---- */
+  --z-nav: 100;
+  --z-overlay: 200;
+  --z-modal: 300;
+  --z-cursor: 400;
+  --z-toast: 500;
+
+  /* ---- Header height (used for scroll offsets) ---- */
+  --header-height: 88px;
+  --header-height-scrolled: 72px;
+}
