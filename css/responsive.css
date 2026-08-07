@@ -111,6 +111,11 @@
     align-items: flex-end;
   }
 
+  .index-drone-hero {
+    height: auto;
+    min-height: 520px;
+  }
+
   .hero-actions {
     flex-direction: column;
     align-items: stretch;

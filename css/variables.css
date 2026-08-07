@@ -16,6 +16,8 @@
   /* Brand red — header/nav utility bar + "services we offer" cards */
   --color-brand-red: #d3392b;
   --color-brand-red-dark: #b32c20;
+  --color-brand-blue: #1d9bf0;
+  --color-brand-blue-dark: #0f6aa8;
   --color-ink: #0a0a0a;
   --color-overlay-strong: rgba(10, 10, 10, 0.72);
   --color-overlay-soft: rgba(10, 10, 10, 0.32);

@@ -51,6 +51,46 @@ function projectCardHTML(project, { wide = false } = {}) {
   `;
 }
 
+function featuredProjectCardHTML(project) {
+  const instagramUrl = project.instagramUrl || "https://instagram.com";
+
+  return `
+    <article class="project-card" data-reveal data-categories="${project.categories.join(" ")}">
+      <a class="project-card-link" href="${instagramUrl}" target="_blank" rel="noopener noreferrer" aria-label="Open ${project.title} on Instagram"></a>
+      <div class="project-card-media">
+        <img
+          data-lazy
+          data-src="${project.thumbnail}"
+          alt="${project.title} thumbnail"
+          width="900"
+          height="1125"
+          loading="lazy"
+        />
+      </div>
+      <button
+        type="button"
+        class="project-card-play"
+        data-video-trigger
+        data-video-src="${project.heroVideo}"
+        data-video-poster="${project.heroImage}"
+        aria-label="Play ${project.title} video"
+      >
+        <i class="fa-solid fa-play"></i>
+      </button>
+      <div class="project-card-body">
+        <span class="project-card-tag">${project.tags[0] || categoryLabel(project.categories[0])}</span>
+        <h3 class="project-card-title">${project.title}</h3>
+        <p class="project-card-desc">${project.description}</p>
+        <div class="project-card-actions">
+          <a href="${instagramUrl}" target="_blank" rel="noopener noreferrer" class="project-card-cta">
+            View on Instagram <i class="fa-solid fa-arrow-right icon" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </article>
+  `;
+}
+
 export async function initFeaturedProjects() {
   const container = qs('[data-projects="featured"]');
   if (!container) return;
@@ -61,7 +101,7 @@ export async function initFeaturedProjects() {
   const limit = container.dataset.limit ? parseInt(container.dataset.limit, 10) : allProjects.length;
   const projects = allProjects.slice(0, limit);
 
-  container.innerHTML = projects.map((project) => projectCardHTML(project)).join("");
+  container.innerHTML = projects.map((project) => featuredProjectCardHTML(project)).join("");
 }
 
 export async function initPortfolioGrid() {
