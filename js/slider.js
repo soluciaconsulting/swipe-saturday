@@ -11,12 +11,16 @@ function buildConfig(el) {
   const perViewDesktop = el.dataset.perViewDesktop || perView;
   const loop = el.dataset.loop !== "false";
   const autoplayDelay = el.dataset.autoplay ? parseInt(el.dataset.autoplay, 10) : 0;
+  const spaceBetween = el.dataset.spaceBetween ? parseInt(el.dataset.spaceBetween, 10) : 20;
+  const effect = el.dataset.effect || "slide";
 
   return {
     slidesPerView: parseFloat(perView),
-    spaceBetween: 20,
+    spaceBetween,
     loop,
     speed: 700,
+    effect,
+    fadeEffect: effect === "fade" ? { crossFade: true } : undefined,
     grabCursor: true,
     a11y: { enabled: true },
     keyboard: { enabled: true },

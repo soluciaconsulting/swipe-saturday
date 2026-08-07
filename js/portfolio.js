@@ -55,12 +55,13 @@ export async function initFeaturedProjects() {
   const container = qs('[data-projects="featured"]');
   if (!container) return;
 
-  const projects = await fetchJSON(DATA_PATH);
-  if (!projects) return;
+  const allProjects = await fetchJSON(DATA_PATH);
+  if (!allProjects) return;
 
-  container.innerHTML = projects
-    .map((project, i) => projectCardHTML(project, { wide: i === 0 || i === 3 }))
-    .join("");
+  const limit = container.dataset.limit ? parseInt(container.dataset.limit, 10) : allProjects.length;
+  const projects = allProjects.slice(0, limit);
+
+  container.innerHTML = projects.map((project) => projectCardHTML(project)).join("");
 }
 
 export async function initPortfolioGrid() {

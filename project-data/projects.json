@@ -158,5 +158,37 @@
       "assets/images/projects/middlebrook-farm-gallery-3.svg",
       "assets/images/projects/middlebrook-farm-gallery-4.svg"
     ]
+  },
+  {
+    "title": "Adventureland Summer Campaign",
+    "slug": "adventureland-summer-campaign",
+    "client": "Adventureland",
+    "year": "2025",
+    "location": "Altoona, IA",
+    "categories": ["destination", "events"],
+    "tags": ["Destination Marketing", "Short-Form", "Theme Park"],
+    "thumbnail": "assets/images/projects/adventureland-summer-campaign-thumb.svg",
+    "heroImage": "assets/images/projects/adventureland-summer-campaign-hero.svg",
+    "heroVideo": "assets/videos/projects/adventureland-summer-campaign.mp4",
+    "description": "A season-long short-form campaign capturing ride POVs and crowd energy at Adventureland to keep ticket sales strong all summer.",
+    "overview": "Adventureland brought Swipe Saturday on for a season-long content partnership, embedding on-site throughout the summer to capture rides, shows and crowd energy for a steady stream of short-form social content.",
+    "objective": "Keep ticket sales strong through the summer by publishing fresh, ride-POV and crowd-energy content on a weekly cadence across Instagram and TikTok.",
+    "deliverables": [
+      "20+ vertical short-form videos",
+      "Ride POV footage library",
+      "Weekly content calendar",
+      "End-of-season recap film"
+    ],
+    "results": [
+      { "number": "2.1M+", "label": "Combined Views" },
+      { "number": "18", "label": "Weeks Covered" },
+      { "number": "5.6%", "label": "Engagement Rate" }
+    ],
+    "gallery": [
+      "assets/images/projects/adventureland-summer-campaign-gallery-1.svg",
+      "assets/images/projects/adventureland-summer-campaign-gallery-2.svg",
+      "assets/images/projects/adventureland-summer-campaign-gallery-3.svg",
+      "assets/images/projects/adventureland-summer-campaign-gallery-4.svg"
+    ]
   }
 ]

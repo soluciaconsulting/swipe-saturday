@@ -115,30 +115,92 @@
   left: 0;
   width: 100%;
   z-index: var(--z-nav);
-  padding-block: var(--space-3);
-  transition: padding var(--duration-base) var(--ease-out),
-    background-color var(--duration-base) var(--ease-out),
-    backdrop-filter var(--duration-base) var(--ease-out),
-    border-color var(--duration-base) var(--ease-out);
-  border-bottom: 1px solid transparent;
-}
-
-.site-header .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.site-header.is-scrolled {
-  padding-block: var(--space-2);
-  background: rgba(255, 255, 255, 0.72);
-  backdrop-filter: blur(16px) saturate(160%);
-  -webkit-backdrop-filter: blur(16px) saturate(160%);
-  border-bottom-color: var(--color-border);
+  background: var(--color-white);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--duration-base) var(--ease-out);
 }
 
 .site-header.is-hidden {
   transform: translateY(-100%);
+}
+
+/* ---- Utility bar (hours / email / social) ---- */
+.topbar {
+  background: var(--color-ink);
+  color: var(--color-text-on-dark-secondary);
+  font-size: var(--fs-micro);
+}
+
+.topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding-block: 0.65rem;
+}
+
+.topbar-info {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.topbar-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.topbar-item i {
+  color: var(--color-brand-red);
+}
+
+.topbar-item a {
+  color: inherit;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.topbar-item a:hover {
+  color: var(--color-text-on-dark);
+}
+
+.topbar-social {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.topbar-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  color: var(--color-text-on-dark);
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.topbar-social a:hover {
+  color: var(--color-brand-red);
+}
+
+/* ---- Main nav ---- */
+.navbar-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding-block: var(--space-3);
+  transition: padding var(--duration-base) var(--ease-out);
+}
+
+.site-header.is-scrolled .topbar {
+  display: none;
+}
+
+.site-header.is-scrolled .navbar-main {
+  padding-block: var(--space-2);
 }
 
 .logo {
@@ -153,10 +215,9 @@
 
 .logo sup {
   font-size: 0.55em;
-  color: var(--color-accent-dark);
+  color: var(--color-brand-red);
 }
 
-.nav-on-dark .site-header:not(.is-scrolled) .logo sup,
 .footer-brand .logo sup {
   color: var(--color-accent);
 }
@@ -164,7 +225,6 @@
 .nav-primary {
   display: flex;
   align-items: center;
-  gap: var(--space-6);
 }
 
 .nav-links {
@@ -188,7 +248,7 @@
   bottom: 0;
   height: 2px;
   width: 100%;
-  background: var(--color-accent-dark);
+  background: var(--color-brand-red);
   transform: scaleX(0);
   transform-origin: right;
   transition: transform var(--duration-base) var(--ease-out);
@@ -201,10 +261,24 @@
   transform-origin: left;
 }
 
+.nav-links a[aria-current="page"] {
+  color: var(--color-brand-red);
+}
+
 .nav-cta {
   display: flex;
   align-items: center;
   gap: var(--space-3);
+}
+
+.btn-quote {
+  background: var(--color-brand-red);
+  color: var(--color-white);
+}
+
+.btn-quote:hover {
+  background: var(--color-brand-red-dark);
+  transform: translateY(-2px);
 }
 
 .nav-toggle {
@@ -232,27 +306,6 @@
 
 .nav-toggle[aria-expanded="true"] span:nth-child(2) {
   opacity: 0;
-}
-
-/* Pages whose top section is a dark, full-bleed hero (video or dark
-   section) need light nav text while the header is still transparent —
-   otherwise it's dark text on a dark background until the user scrolls. */
-.nav-on-dark .site-header:not(.is-scrolled) .logo,
-.nav-on-dark .site-header:not(.is-scrolled) .nav-links a {
-  color: var(--color-text-on-dark);
-}
-
-.nav-on-dark .site-header:not(.is-scrolled) .nav-links a::after {
-  background: var(--color-text-on-dark);
-}
-
-.nav-on-dark .site-header:not(.is-scrolled) .nav-cta .btn-outline {
-  color: var(--color-text-on-dark);
-  border-color: var(--color-border-on-dark);
-}
-
-.nav-on-dark .site-header:not(.is-scrolled) .nav-toggle span {
-  background: var(--color-text-on-dark);
 }
 
 .nav-toggle[aria-expanded="true"] span:nth-child(3) {
@@ -405,6 +458,148 @@
   0% { top: -100%; }
   60% { top: 100%; }
   100% { top: 100%; }
+}
+
+/* ---- Hero video slider (3 drone clips) ---- */
+.hero-slider {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-slider .swiper-wrapper {
+  height: 100%;
+}
+
+.hero-slider .swiper-slide {
+  height: 100%;
+}
+
+.hero-slider-pagination {
+  position: absolute;
+  z-index: 3;
+  bottom: var(--space-4) !important;
+  left: 50% !important;
+  transform: translateX(-50%);
+  width: auto !important;
+  display: flex;
+  gap: 10px;
+}
+
+.hero-slider-pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 1;
+  transition: background var(--duration-fast) var(--ease-out);
+}
+
+.hero-slider-pagination .swiper-pagination-bullet-active {
+  background: var(--color-brand-red);
+}
+
+/* ---- Service We Provide (3-column cards) ---- */
+.service-offer-grid {
+  gap: var(--space-4);
+}
+
+.service-offer-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-2);
+  padding: var(--space-6) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  transition: box-shadow var(--duration-base) var(--ease-out), transform var(--duration-base) var(--ease-out);
+}
+
+.service-offer-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.service-offer-icon {
+  font-size: 2.25rem;
+  color: var(--color-brand-red);
+  margin-bottom: var(--space-1);
+}
+
+.service-offer-card h3 {
+  font-size: var(--fs-section);
+}
+
+.service-offer-card p {
+  margin-bottom: var(--space-1);
+}
+
+.btn-service {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--space-2);
+  padding: 0.85rem 1.75rem;
+  background: var(--color-brand-red);
+  color: var(--color-white);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-semibold);
+  transition: background var(--duration-fast) var(--ease-out), transform var(--duration-base) var(--ease-out);
+}
+
+.btn-service:hover {
+  background: var(--color-brand-red-dark);
+  transform: translateY(-2px);
+}
+
+.btn-service-lg {
+  margin-top: 0;
+  padding: 1.05rem 2.25rem;
+  font-size: var(--fs-body);
+}
+
+/* ---------------------------------------------------------------------- */
+/* About intro (homepage, right under the hero)                            */
+/* ---------------------------------------------------------------------- */
+.about-stat-row {
+  margin-top: var(--space-8);
+  text-align: center;
+}
+
+.about-stat-value {
+  font-size: var(--fs-heading);
+  font-weight: var(--fw-bold);
+  color: var(--color-text);
+}
+
+.about-stat-bar {
+  height: 4px;
+  border-radius: var(--radius-full);
+  background: var(--color-border);
+  margin-top: var(--space-3);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-stat-bar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--stat-color, var(--color-accent));
+  border-radius: inherit;
+}
+
+.about-stat-meta {
+  margin-top: var(--space-3);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--fs-small);
+  color: var(--color-text-secondary);
+}
+
+.about-stat-meta .icon {
+  color: var(--stat-color, var(--color-text));
 }
 
 /* Generic page hero (non-video pages) */
@@ -723,6 +918,15 @@
   transform: scale(1);
 }
 
+/* ---- Homepage featured grid variant (uniform 3-up / 3-down) ---- */
+.project-grid--featured {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.project-grid--featured .project-card {
+  aspect-ratio: 3 / 4;
+}
+
 /* ---- Portfolio filter grid variant (smaller cards) ---- */
 .portfolio-grid {
   display: grid;
@@ -979,12 +1183,10 @@
 /* Contact form                                                            */
 /* ---------------------------------------------------------------------- */
 .contact-panel {
-  background: rgba(255, 255, 255, 0.6);
-  border: 1px solid var(--color-border-on-dark);
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   padding: var(--space-6);
-  backdrop-filter: blur(20px) saturate(160%);
-  -webkit-backdrop-filter: blur(20px) saturate(160%);
   box-shadow: var(--shadow-lg);
 }
 
@@ -1129,12 +1331,62 @@ select.form-control {
 }
 
 /* ---------------------------------------------------------------------- */
+/* About page — hero band + mission quote                                 */
+/* ---------------------------------------------------------------------- */
+.hero-band {
+  background: var(--color-accent-dark);
+  padding-top: calc(var(--header-height) + var(--space-8));
+  padding-bottom: var(--space-8);
+  text-align: center;
+}
+
+.hero-band .eyebrow {
+  color: var(--color-text-on-dark);
+  justify-content: center;
+}
+
+.hero-band .h1 {
+  color: var(--color-text-on-dark);
+  max-width: 42ch;
+  margin-inline: auto;
+  margin-top: var(--space-2);
+}
+
+.hero-band .text-lead {
+  color: rgba(245, 245, 245, 0.82);
+  margin-inline: auto;
+}
+
+.hero-band .breadcrumb {
+  justify-content: center;
+  margin-top: var(--space-4);
+  margin-bottom: 0;
+}
+
+.hero-band .breadcrumb a,
+.hero-band .breadcrumb span {
+  color: rgba(245, 245, 245, 0.7);
+}
+
+.hero-band .breadcrumb a:hover {
+  color: var(--color-text-on-dark);
+}
+
+.mission-quote {
+  font-style: italic;
+  font-size: var(--fs-body-lg);
+  color: var(--color-accent);
+  border-left: 3px solid var(--color-accent);
+  padding-left: var(--space-3);
+}
+
+/* ---------------------------------------------------------------------- */
 /* Timeline (about page)                                                   */
 /* ---------------------------------------------------------------------- */
 .timeline {
   position: relative;
   padding-left: var(--space-6);
-  border-left: 1px solid var(--color-border);
+  border-left: 1px solid var(--color-border-on-dark);
   display: flex;
   flex-direction: column;
   gap: var(--space-6);
@@ -1159,23 +1411,69 @@ select.form-control {
   font-size: var(--fs-micro);
   letter-spacing: var(--ls-wide);
   text-transform: uppercase;
-  color: var(--color-accent-dark);
+  color: var(--color-accent);
   font-weight: var(--fw-semibold);
   margin-bottom: 0.5rem;
+}
+
+.timeline-item p {
+  color: var(--color-text-on-dark-secondary);
 }
 
 /* ---------------------------------------------------------------------- */
 /* Value cards (about)                                                     */
 /* ---------------------------------------------------------------------- */
 .value-card {
-  padding: var(--space-4) 0;
-  border-top: 1px solid var(--color-border);
+  padding: var(--space-5);
+  background: var(--color-surface-dark-alt);
+  border-radius: var(--radius);
 }
 
-.value-card-index {
-  font-size: var(--fs-micro);
-  color: var(--color-accent-dark);
-  font-weight: var(--fw-semibold);
+.value-card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background: rgba(29, 155, 240, 0.14);
+  color: var(--color-accent);
+  font-size: 1.15rem;
+}
+
+.value-card p {
+  color: var(--color-text-on-dark-secondary);
+}
+
+/* ---- Warm section variants (about page — breaks up the flat black run) --- */
+.section--story {
+  background: linear-gradient(160deg, #2b1d14 0%, #1c130d 100%);
+}
+
+.section--story .timeline {
+  border-left-color: rgba(221, 184, 146, 0.25);
+}
+
+.section--story .timeline-item::before {
+  background: #ddb892;
+}
+
+.section--story .timeline-year {
+  color: #ddb892;
+}
+
+.section--values {
+  background: linear-gradient(160deg, #2f2013 0%, #1a120c 100%);
+}
+
+.section--values .value-card {
+  background: rgba(176, 137, 104, 0.12);
+  border: 1px solid rgba(221, 184, 146, 0.14);
+}
+
+.section--values .value-card-icon {
+  background: rgba(221, 184, 146, 0.18);
+  color: #ddb892;
 }
 
 /* ---------------------------------------------------------------------- */
@@ -1436,7 +1734,7 @@ select.form-control {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid var(--color-border-on-dark);
+  border: 1px solid var(--color-border);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1447,6 +1745,10 @@ select.form-control {
 .footer-social a:hover {
   background: var(--color-accent);
   border-color: var(--color-accent);
+}
+
+.site-footer .footer-social a {
+  border-color: var(--color-border-on-dark);
 }
 
 .footer-col h4 {

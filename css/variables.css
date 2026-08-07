@@ -12,6 +12,10 @@
   --color-accent: #1d9bf0;
   --color-accent-dark: #0f6aa8; /* passes 4.5:1+ as text against both #fff and #f5f5f5 */
   --color-border: #eaeaea;
+
+  /* Brand red — header/nav utility bar + "services we offer" cards */
+  --color-brand-red: #d3392b;
+  --color-brand-red-dark: #b32c20;
   --color-ink: #0a0a0a;
   --color-overlay-strong: rgba(10, 10, 10, 0.72);
   --color-overlay-soft: rgba(10, 10, 10, 0.32);
@@ -95,7 +99,8 @@
   --z-cursor: 400;
   --z-toast: 500;
 
-  /* ---- Header height (used for scroll offsets) ---- */
-  --header-height: 88px;
-  --header-height-scrolled: 72px;
+  /* ---- Header height (used for scroll offsets); two-row header
+     (utility topbar + main nav) is taller than the old single-row nav. ---- */
+  --header-height: 132px;
+  --header-height-scrolled: 80px;
 }
