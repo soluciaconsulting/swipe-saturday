@@ -117,7 +117,9 @@
   z-index: var(--z-nav);
   background: var(--color-white);
   box-shadow: var(--shadow-sm);
-  transition: transform var(--duration-base) var(--ease-out);
+  transition: background-color var(--duration-base) var(--ease-out),
+    box-shadow var(--duration-base) var(--ease-out),
+    transform var(--duration-base) var(--ease-out);
 }
 
 .site-header.is-hidden {
@@ -203,6 +205,28 @@
   padding-block: var(--space-2);
 }
 
+.site-header.is-scrolled {
+  background: var(--color-ink);
+  box-shadow: 0 8px 30px rgba(10, 10, 10, 0.2);
+}
+
+.site-header.is-scrolled .logo,
+.site-header.is-scrolled .nav-links a,
+.site-header.is-scrolled .navbar-social a {
+  color: var(--color-text-on-dark);
+}
+
+.site-header.is-scrolled .nav-links a:hover,
+.site-header.is-scrolled .nav-links a:focus-visible,
+.site-header.is-scrolled .nav-links a[aria-current="page"],
+.site-header.is-scrolled .navbar-social a:hover {
+  color: var(--color-brand-red);
+}
+
+.site-header.is-scrolled .nav-toggle span {
+  background: var(--color-text-on-dark);
+}
+
 .logo {
   font-size: 1.05rem;
   font-weight: var(--fw-bold);
@@ -211,6 +235,31 @@
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.navbar-brand {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.15rem;
+  flex: 0 0 auto;
+}
+
+.navbar-social {
+  align-self: center;
+  gap: 0.2rem;
+}
+
+.navbar-social a {
+  width: 24px;
+  height: 24px;
+  color: var(--color-text);
+  font-size: 0.9rem;
+}
+
+.navbar-social a:hover {
+  color: var(--color-brand-red);
 }
 
 .logo sup {
@@ -239,6 +288,7 @@
   font-weight: var(--fw-medium);
   color: var(--color-text);
   padding-block: 0.25rem;
+  transition: color var(--duration-fast) var(--ease-out);
 }
 
 .nav-links a::after {
@@ -561,15 +611,43 @@
 /* ---------------------------------------------------------------------- */
 /* About intro (homepage, right under the hero)                            */
 /* ---------------------------------------------------------------------- */
+.about-preview-split {
+  align-items: center;
+}
+
+.about-preview-media {
+  border-radius: var(--radius-lg);
+  height: clamp(320px, 32vw, 440px);
+  overflow: hidden;
+  position: relative;
+  background: var(--color-bg-alt);
+}
+
+.about-preview-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.about-preview-copy {
+  max-width: 620px;
+}
+
 .about-stat-row {
   margin-top: var(--space-8);
   text-align: center;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: var(--space-4);
 }
 
 .about-stat-value {
-  font-size: var(--fs-heading);
+  font-size: clamp(2rem, 2vw + 1rem, 3rem);
   font-weight: var(--fw-bold);
   color: var(--color-text);
+  line-height: var(--lh-tight);
 }
 
 .about-stat-bar {
@@ -593,6 +671,7 @@
   margin-top: var(--space-3);
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   font-size: var(--fs-small);
   color: var(--color-text-secondary);
@@ -713,6 +792,52 @@
 }
 
 /* ---- Service card ---- */
+.services-outline {
+  max-width: 920px;
+  margin-inline: auto;
+  display: grid;
+  gap: var(--space-4);
+}
+
+.services-outline-section {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: clamp(var(--space-4), 4vw, var(--space-6));
+}
+
+.services-outline-section h3 {
+  font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+  margin-bottom: var(--space-3);
+}
+
+.services-outline-section ol {
+  list-style: decimal;
+  margin: 0;
+  padding-left: 1.35rem;
+}
+
+.services-outline-section > ol {
+  font-size: clamp(1.1rem, 1rem + 0.6vw, 1.4rem);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-snug);
+}
+
+.services-outline-section ol ol {
+  margin-top: var(--space-1);
+  font-size: clamp(1rem, 0.95rem + 0.4vw, 1.25rem);
+  font-weight: var(--fw-regular);
+  color: var(--color-text-secondary);
+}
+
+.services-outline-section li + li {
+  margin-top: var(--space-1);
+}
+
+.services-overview-grid {
+  align-items: stretch;
+}
+
 .service-card {
   background: var(--color-white);
   border: 1px solid var(--color-border);
@@ -728,6 +853,18 @@
 .service-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-lg);
+}
+
+.service-card--featured {
+  min-height: 280px;
+}
+
+.service-card--featured h3 {
+  font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+}
+
+.service-card--featured p {
+  font-size: var(--fs-body);
 }
 
 .service-card-icon {

@@ -1,5 +1,5 @@
 /**
- * Header scroll behavior (blur-in, hide-on-scroll-down) and the fullscreen
+ * Header scroll behavior and the fullscreen
  * mobile menu, including a focus trap for keyboard/screen-reader users.
  */
 import { qs, qsa, throttle } from "./utils.js";
@@ -7,15 +7,9 @@ import { qs, qsa, throttle } from "./utils.js";
 const SCROLL_THRESHOLD = 24;
 
 function initHeaderScroll(header) {
-  let lastY = window.scrollY;
-
   const onScroll = throttle(() => {
     const y = window.scrollY;
     header.classList.toggle("is-scrolled", y > SCROLL_THRESHOLD);
-
-    const scrollingDown = y > lastY && y > header.offsetHeight;
-    header.classList.toggle("is-hidden", scrollingDown);
-    lastY = y;
   }, 80);
 
   window.addEventListener("scroll", onScroll, { passive: true });

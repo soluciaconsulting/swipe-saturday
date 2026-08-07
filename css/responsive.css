@@ -77,6 +77,10 @@
     gap: var(--space-3);
   }
 
+  .about-stat-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .col-span-4,
   .col-span-6,
   .col-span-8 {
@@ -120,6 +124,7 @@
     display: none;
   }
 
+  .grid-2,
   .grid-3,
   .grid-4 {
     grid-template-columns: 1fr;
@@ -175,6 +180,10 @@
 
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-stat-row {
+    grid-template-columns: 1fr;
   }
 
   .cta-band {

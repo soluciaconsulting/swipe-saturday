@@ -235,19 +235,49 @@
         aria-labelledby="about-preview-heading"
       >
         <div class="container">
-          <div class="section-header section-header--center">
-            <p class="eyebrow">About Swipe Saturday</p>
-            <h2 class="h2" id="about-preview-heading">
-              Built by a storyteller, run like a studio.
-            </h2>
-            <p class="text-lead">
-              Swipe Saturday® is a Des Moines-based content brand creating
-              short-form social media and aerial content for businesses
-              throughout Des Moines, Iowa and the Midwest.
-            </p>
+          <div class="split split--stretch about-preview-split" data-reveal>
+            <div class="about-preview-media" data-reveal-scale>
+              <img
+                data-lazy
+                data-src="assets/images/about/portrait.svg"
+                alt="Founder of Swipe Saturday on location in Des Moines, Iowa"
+                width="1000"
+                height="1250"
+                loading="lazy"
+              />
+            </div>
+            <div class="about-preview-copy">
+              <p class="badge">The Founder</p>
+              <p class="eyebrow" style="margin-top: var(--space-4)">
+                About Swipe Saturday
+              </p>
+              <h2 class="h2" id="about-preview-heading">
+                Built by a storyteller, run like a studio.
+              </h2>
+              <p class="mission-quote" style="margin-top: var(--space-4)">
+                I’m Eric, the creator behind Swipe Saturday®, based in Des
+                Moines. Swipe Saturday® has evolved into a content business
+                working with brands, businesses, events and destinations.
+              </p>
+              <p class="text-lead" style="margin-top: var(--space-3)">
+                We create short-form social media and aerial content for
+                businesses throughout Des Moines, Iowa and the Midwest.
+              </p>
+            </div>
           </div>
 
-          <div class="grid-3 about-stat-row" data-reveal>
+          <div class="about-stat-row" data-reveal>
+            <div
+              class="about-stat-block"
+              style="--stat-color: var(--color-brand-red-dark)"
+            >
+              <p class="about-stat-value">FAA</p>
+              <div class="about-stat-bar"></div>
+              <p class="about-stat-meta">
+                <i class="fa-solid fa-certificate icon" aria-hidden="true"></i>
+                Part 107 Certified
+              </p>
+            </div>
             <div
               class="about-stat-block"
               style="--stat-color: var(--color-accent-dark)"
@@ -273,6 +303,17 @@
                 Projects Delivered
               </p>
             </div>
+            <div
+              class="about-stat-block"
+              style="--stat-color: var(--color-accent)"
+            >
+              <p class="about-stat-value">17K+</p>
+              <div class="about-stat-bar"></div>
+              <p class="about-stat-meta">
+                <i class="fa-brands fa-instagram icon" aria-hidden="true"></i>
+                Instagram Audience
+              </p>
+            </div>
             <div class="about-stat-block" style="--stat-color: #b08968">
               <p class="about-stat-value">Midwest</p>
               <div class="about-stat-bar"></div>
@@ -282,19 +323,64 @@
               </p>
             </div>
           </div>
-
-          <div
-            class="hero-actions"
-            style="justify-content: center; margin-top: var(--space-7)"
-          >
-            <span data-magnetic>
-              <a href="about.html" class="btn btn-primary">Our Story</a>
-            </span>
-            <span data-magnetic>
-              <a href="#service-offer-heading" class="btn btn-outline"
-                >Explore Services</a
-              >
-            </span>
+          </div>
+        </div>
+      </section>
+       <section class="">
+        <div class="container">
+          <div class="section-header section-header--center">
+            <p class="eyebrow">What We Value</p>
+            <h2 class="h2">The way we work</h2>
+          </div>
+          <div class="grid-4">
+            <div class="value-card" data-reveal>
+              <div class="value-card-icon">
+                <i class="fa-solid fa-bullseye" aria-hidden="true"></i>
+              </div>
+              <h3 class="h4" style="margin-top: var(--space-3)">
+                Strategy First
+              </h3>
+              <p style="margin-top: var(--space-2)">
+                Every shot serves a goal — awareness, traffic or bookings — not
+                just aesthetics.
+              </p>
+            </div>
+            <div class="value-card" data-reveal>
+              <div class="value-card-icon">
+                <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+              </div>
+              <h3 class="h4" style="margin-top: var(--space-3)">
+                Fast, Reliable Delivery
+              </h3>
+              <p style="margin-top: var(--space-2)">
+                Clear timelines and on-time delivery, every time — no chasing,
+                no surprises.
+              </p>
+            </div>
+            <div class="value-card" data-reveal>
+              <div class="value-card-icon">
+                <i class="fa-solid fa-gem" aria-hidden="true"></i>
+              </div>
+              <h3 class="h4" style="margin-top: var(--space-3)">
+                Craft Over Volume
+              </h3>
+              <p style="margin-top: var(--space-2)">
+                We'd rather ship fewer pieces that perform than flood a feed
+                with filler.
+              </p>
+            </div>
+            <div class="value-card" data-reveal>
+              <div class="value-card-icon">
+                <i class="fa-solid fa-handshake" aria-hidden="true"></i>
+              </div>
+              <h3 class="h4" style="margin-top: var(--space-3)">
+                Real Partnership
+              </h3>
+              <p style="margin-top: var(--space-2)">
+                We show up like an extension of your marketing team, not a
+                vendor.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -628,143 +714,35 @@
             </p>
           </div>
 
-          <div class="grid-4">
-            <article class="service-card" data-reveal data-tilt>
-              <div class="service-card-icon">
-                <i class="fa-solid fa-bolt" aria-hidden="true"></i>
-              </div>
-              <h3>Short-Form Content</h3>
-              <p>
-                Vertical video built for Reels, TikTok and Shorts — fast
-                turnaround, native pacing.
-              </p>
-              <a href="services.html#short-form" class="service-card-link"
-                >Learn More
-                <i class="fa-solid fa-arrow-right icon" aria-hidden="true"></i
-              ></a>
-            </article>
-            <article class="service-card" data-reveal data-tilt>
-              <div class="service-card-icon">
-                <i class="fa-solid fa-helicopter" aria-hidden="true"></i>
-              </div>
-              <h3>Drone Content</h3>
-              <p>
-                FAA Part 107 certified aerial cinematography for real estate,
-                events and destinations.
-              </p>
-              <a href="drone.html" class="service-card-link"
-                >Learn More
-                <i class="fa-solid fa-arrow-right icon" aria-hidden="true"></i
-              ></a>
-            </article>
-            <!-- <article class="service-card" data-reveal data-tilt>
-            <div class="service-card-icon"><i class="fa-solid fa-store" aria-hidden="true"></i></div>
-            <h3>Retail Campaigns</h3>
-            <p>In-store product and lifestyle content that drives foot traffic and online engagement.</p>
-            <a href="services.html#retail" class="service-card-link">Learn More <i class="fa-solid fa-arrow-right icon" aria-hidden="true"></i></a>
-          </article> -->
-            <article class="service-card" data-reveal data-tilt>
-              <div class="service-card-icon">
-                <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
-              </div>
-              <h3>Event Coverage</h3>
-              <p>
-                Full-day coverage with same-day highlight turnaround while your
-                event is still trending.
-              </p>
-              <a href="services.html#events" class="service-card-link"
-                >Learn More
-                <i class="fa-solid fa-arrow-right icon" aria-hidden="true"></i
-              ></a>
-            </article>
-            <!-- <article class="service-card" data-reveal data-tilt>
-            <div class="service-card-icon"><i class="fa-solid fa-mountain-sun" aria-hidden="true"></i></div>
-            <h3>Destination Marketing</h3>
-            <p>Cinematic films that sell a place, not just a product — built for tourism partners.</p>
-            <a href="services.html#destination" class="service-card-link">Learn More <i class="fa-solid fa-arrow-right icon" aria-hidden="true"></i></a>
-          </article> -->
-            <!-- <article class="service-card" data-reveal data-tilt>
-            <div class="service-card-icon"><i class="fa-solid fa-box-open" aria-hidden="true"></i></div>
-            <h3>Asset Packages</h3>
-            <p>Bulk photo and video libraries for paid social, web and in-store signage.</p>
-            <a href="services.html#assets" class="service-card-link">Learn More <i class="fa-solid fa-arrow-right icon" aria-hidden="true"></i></a>
-          </article> -->
-            <!-- <article class="service-card" data-reveal data-tilt>
-            <div class="service-card-icon"><i class="fa-solid fa-rotate" aria-hidden="true"></i></div>
-            <h3>Monthly Content</h3>
-            <p>An ongoing content retainer that keeps your feed active without the in-house lift.</p>
-            <a href="services.html#monthly" class="service-card-link">Learn More <i class="fa-solid fa-arrow-right icon" aria-hidden="true"></i></a>
-          </article> -->
-            <article class="service-card" data-reveal data-tilt>
-              <div class="service-card-icon">
-                <i class="fa-solid fa-user-group" aria-hidden="true"></i>
-              </div>
-              <h3>Influencer Marketing</h3>
-              <p>
-                Paid and gifted partnerships with local creators that extend
-                your reach beyond your own following.
-              </p>
-              <a href="services.html" class="service-card-link"
-                >Learn More
-                <i class="fa-solid fa-arrow-right icon" aria-hidden="true"></i
-              ></a>
-            </article>
-            <article class="service-card" data-reveal data-tilt>
-              <div class="service-card-icon">
-                <i class="fa-solid fa-child" aria-hidden="true"></i>
-              </div>
-              <h3>Family Friendly Content</h3>
-              <p>
-                Wholesome, brand-safe video for parks, farms, fairs and
-                community events built for family audiences.
-              </p>
-              <a href="services.html" class="service-card-link"
-                >Learn More
-                <i class="fa-solid fa-arrow-right icon" aria-hidden="true"></i
-              ></a>
-            </article>
-            <article class="service-card" data-reveal data-tilt>
-              <div class="service-card-icon">
-                <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
-              </div>
-              <h3>Local Business &amp; Destination Content</h3>
-              <p>
-                Everyday coverage for local businesses, destinations and
-                community spots that keeps your presence active nearby.
-              </p>
-              <a href="services.html" class="service-card-link"
-                >Learn More
-                <i class="fa-solid fa-arrow-right icon" aria-hidden="true"></i
-              ></a>
-            </article>
-            <article class="service-card" data-reveal data-tilt>
-              <div class="service-card-icon">
-                <i class="fa-solid fa-images" aria-hidden="true"></i>
-              </div>
-              <h3>Raw Photo/Video Asset Packages</h3>
-              <p>
-                Unedited photo and video files handed off directly so your team
-                can cut, resize and repurpose freely.
-              </p>
-              <a href="services.html" class="service-card-link"
-                >Learn More
-                <i class="fa-solid fa-arrow-right icon" aria-hidden="true"></i
-              ></a>
-            </article>
-            <article class="service-card" data-reveal data-tilt>
-              <div class="service-card-icon">
-                <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
-              </div>
-              <h3>Recurring/Ongoing Content Packages</h3>
-              <p>
-                Standing production days on a set cadence — monthly, quarterly
-                or seasonal — so new content is always in the pipeline.
-              </p>
-              <a href="services.html" class="service-card-link"
-                >Learn More
-                <i class="fa-solid fa-arrow-right icon" aria-hidden="true"></i
-              ></a>
-            </article>
+          <div class="services-outline" data-reveal>
+            <section class="services-outline-section">
+              <h3>Drone Footage</h3>
+              <ol>
+                <li>Drone &amp; aerial content</li>
+                <li>A few more videos here</li>
+                <li>FAA Part 107 certification</li>
+              </ol>
+            </section>
+
+            <section class="services-outline-section">
+              <h3>Other Services</h3>
+              <ol>
+                <li>Influencer Marketing</li>
+                <li>Family Friendly Content</li>
+                <li>
+                  Other Services
+                  <ol>
+                    <li>Short-form branded content / Instagram Reels</li>
+                    <li>Retail and product campaigns</li>
+                    <li>Event coverage</li>
+                    <li>Local business and destination content</li>
+                    <li>Raw photo/video asset packages</li>
+                    <li>Recurring/ongoing content packages</li>
+                  </ol>
+                </li>
+                <li>Engagement Types</li>
+              </ol>
+            </section>
           </div>
         </div>
         <div style="margin-top: var(--space-7); text-align: center">
@@ -774,7 +752,7 @@
         </div>
       </section>
 
-      <!-- ============================ DRONE SHOWCASE ======================== -->
+      <!-- ============================ DRONE SHOWCASE ========================
       <section class="section section--dark" aria-labelledby="drone-heading">
         <div class="container">
           <div class="split split--asymmetric">
@@ -865,9 +843,9 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> -->
 
-      <!-- ============================== CREDIBILITY ========================= -->
+      <!-- ============================== CREDIBILITY =========================
       <section
         class="section section--dark section--tight"
         aria-label="Credibility statistics"
@@ -894,7 +872,7 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> -->
 
       <!-- ============================== TESTIMONIALS ======================== -->
       <section
