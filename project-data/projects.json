@@ -7,9 +7,11 @@
     "location": "Des Moines, IA",
     "categories": ["retail", "products"],
     "tags": ["Short-Form", "Retail Campaign", "Product Content"],
-    "thumbnail": "assets/images/projects/fleet-farm-milwaukee-tool-thumb.svg",
-    "heroImage": "assets/images/projects/fleet-farm-milwaukee-tool-hero.svg",
+    "thumbnail": "assets/images/projects/fleet-farm-milwaukee-tool-hero.jpg",
+    "heroImage": "assets/images/projects/fleet-farm-milwaukee-tool-hero.jpg",
     "heroVideo": "assets/videos/projects/fleet-farm-milwaukee-tool.mp4",
+    "instagramUrl": "https://www.instagram.com/reel/Dblkxbpx7qT/?igsh=MXBwOXZyNnZvZHpmbQ==",
+    "featuredStat": "350K+ views",
     "description": "A short-form content series turning Milwaukee Tool's in-store footprint at Fleet Farm into scroll-stopping product stories.",
     "overview": "Fleet Farm partnered with Swipe Saturday to bring Milwaukee Tool's newest lineup to life in-store, producing a bank of short-form vertical content built for Instagram Reels and TikTok distribution across both brands' channels.",
     "objective": "Drive foot traffic to Fleet Farm locations and boost engagement on Milwaukee Tool's product drops through fast-paced, retail-native short-form video.",
@@ -32,80 +34,18 @@
     ]
   },
   {
-    "title": "Von Maur",
-    "slug": "von-maur",
-    "client": "Von Maur",
-    "year": "2025",
-    "location": "Des Moines, IA",
-    "categories": ["retail", "products"],
-    "tags": ["Brand Storytelling", "Retail", "Seasonal Campaign"],
-    "thumbnail": "assets/images/projects/von-maur-thumb.svg",
-    "heroImage": "assets/images/projects/von-maur-hero.svg",
-    "heroVideo": "assets/videos/projects/von-maur.mp4",
-    "description": "Cinematic brand storytelling for a Von Maur seasonal collection, blending fashion film pacing with retail clarity.",
-    "overview": "Von Maur wanted their seasonal collection to feel like a fashion film, not a lookbook. Swipe Saturday shot on-location across two stores to capture a cinematic brand story built for web, social, and in-store screens.",
-    "objective": "Elevate Von Maur's seasonal launch with premium brand film content that performs across owned channels and in-store digital signage.",
-    "deliverables": [
-      "1 hero brand film (60s)",
-      "6 vertical social cutdowns",
-      "Editorial-style product photography",
-      "In-store signage loop (silent cut)"
-    ],
-    "results": [
-      { "number": "620K+", "label": "Video Views" },
-      { "number": "3.9x", "label": "Watch-Through Rate" },
-      { "number": "2", "label": "Store Locations" }
-    ],
-    "gallery": [
-      "assets/images/projects/von-maur-gallery-1.svg",
-      "assets/images/projects/von-maur-gallery-2.svg",
-      "assets/images/projects/von-maur-gallery-3.svg",
-      "assets/images/projects/von-maur-gallery-4.svg"
-    ]
-  },
-  {
-    "title": "Outlets of Des Moines",
-    "slug": "outlets-of-des-moines",
-    "client": "Outlets of Des Moines",
-    "year": "2024",
-    "location": "Altoona, IA",
-    "categories": ["destination", "retail", "drone"],
-    "tags": ["Destination Marketing", "Drone", "Retail"],
-    "thumbnail": "assets/images/projects/outlets-of-des-moines-thumb.svg",
-    "heroImage": "assets/images/projects/outlets-of-des-moines-hero.svg",
-    "heroVideo": "assets/videos/projects/outlets-of-des-moines.mp4",
-    "description": "A destination-marketing film pairing aerial establishing shots with ground-level storefront energy to drive regional visits.",
-    "overview": "Outlets of Des Moines needed content that positioned the center as a destination, not just a shopping strip. We combined FAA Part 107 drone footage with handheld storefront coverage to sell the full day-trip experience.",
-    "objective": "Increase regional awareness and weekend visitation through destination-style video distributed across paid social and tourism partners.",
-    "deliverables": [
-      "1 destination hero film (45s)",
-      "Aerial establishing footage",
-      "8 storefront vignette videos",
-      "Photo library for tourism partners"
-    ],
-    "results": [
-      { "number": "890K+", "label": "Regional Reach" },
-      { "number": "14", "label": "Storefronts Featured" },
-      { "number": "5", "label": "Tourism Partners" }
-    ],
-    "gallery": [
-      "assets/images/projects/outlets-of-des-moines-gallery-1.svg",
-      "assets/images/projects/outlets-of-des-moines-gallery-2.svg",
-      "assets/images/projects/outlets-of-des-moines-gallery-3.svg",
-      "assets/images/projects/outlets-of-des-moines-gallery-4.svg"
-    ]
-  },
-  {
-    "title": "Big Grove World Cup",
+    "title": "Big Grove DSM",
     "slug": "big-grove-world-cup",
     "client": "Big Grove Brewery",
     "year": "2024",
     "location": "Des Moines, IA",
     "categories": ["events"],
     "tags": ["Event Coverage", "Short-Form", "Live Content"],
-    "thumbnail": "assets/images/projects/big-grove-world-cup-thumb.svg",
-    "heroImage": "assets/images/projects/big-grove-world-cup-hero.svg",
+    "thumbnail": "assets/images/projects/big-grove-world-cup-hero.jpg",
+    "heroImage": "assets/images/projects/big-grove-world-cup-hero.jpg",
     "heroVideo": "assets/videos/projects/big-grove-world-cup.mp4",
+    "instagramUrl": "https://www.instagram.com/reel/DZ6OaP9Munm/?igsh=NWwwczNzcDdnbGZv",
+    "featuredStat": "5K+ views, 40 shares",
     "description": "Full-day event coverage capturing the energy of Big Grove's World Cup watch party, turned around same-day for social.",
     "overview": "Big Grove hosted a packed World Cup watch party and needed real-time content to keep momentum going online throughout the day. Swipe Saturday embedded on-site with a two-person crew for full coverage and rapid turnaround.",
     "objective": "Capture authentic crowd energy and turn highlight reels around same-day to maximize social relevance while the event was still trending.",
@@ -135,9 +75,11 @@
     "location": "Central Iowa",
     "categories": ["destination", "drone"],
     "tags": ["Drone", "Brand Film", "Destination Marketing"],
-    "thumbnail": "assets/images/projects/middlebrook-farm-thumb.svg",
-    "heroImage": "assets/images/projects/middlebrook-farm-hero.svg",
+    "thumbnail": "assets/images/projects/middlebrook-farm-hero.jpg",
+    "heroImage": "assets/images/projects/middlebrook-farm-hero.jpg",
     "heroVideo": "assets/videos/projects/middlebrook-farm.mp4",
+    "instagramUrl": "https://www.instagram.com/reel/DZv1YUMx5py/?igsh=YmRhaXZzZmJhNW13",
+    "featuredStat": "2.4K+ views, 21 shares",
     "description": "A sweeping aerial brand film capturing the seasonal beauty of Middlebrook Farm for destination and event marketing.",
     "overview": "Middlebrook Farm wanted a signature brand film to anchor their website and event marketing. We combined FAA Part 107 aerial cinematography with golden-hour ground footage across two seasons.",
     "objective": "Produce an evergreen brand film that communicates scale and seasonal beauty to drive event bookings and farm visits.",
@@ -157,38 +99,6 @@
       "assets/images/projects/middlebrook-farm-gallery-2.svg",
       "assets/images/projects/middlebrook-farm-gallery-3.svg",
       "assets/images/projects/middlebrook-farm-gallery-4.svg"
-    ]
-  },
-  {
-    "title": "Adventureland Summer Campaign",
-    "slug": "adventureland-summer-campaign",
-    "client": "Adventureland",
-    "year": "2025",
-    "location": "Altoona, IA",
-    "categories": ["destination", "events"],
-    "tags": ["Destination Marketing", "Short-Form", "Theme Park"],
-    "thumbnail": "assets/images/projects/adventureland-summer-campaign-thumb.svg",
-    "heroImage": "assets/images/projects/adventureland-summer-campaign-hero.svg",
-    "heroVideo": "assets/videos/projects/adventureland-summer-campaign.mp4",
-    "description": "A season-long short-form campaign capturing ride POVs and crowd energy at Adventureland to keep ticket sales strong all summer.",
-    "overview": "Adventureland brought Swipe Saturday on for a season-long content partnership, embedding on-site throughout the summer to capture rides, shows and crowd energy for a steady stream of short-form social content.",
-    "objective": "Keep ticket sales strong through the summer by publishing fresh, ride-POV and crowd-energy content on a weekly cadence across Instagram and TikTok.",
-    "deliverables": [
-      "20+ vertical short-form videos",
-      "Ride POV footage library",
-      "Weekly content calendar",
-      "End-of-season recap film"
-    ],
-    "results": [
-      { "number": "2.1M+", "label": "Combined Views" },
-      { "number": "18", "label": "Weeks Covered" },
-      { "number": "5.6%", "label": "Engagement Rate" }
-    ],
-    "gallery": [
-      "assets/images/projects/adventureland-summer-campaign-gallery-1.svg",
-      "assets/images/projects/adventureland-summer-campaign-gallery-2.svg",
-      "assets/images/projects/adventureland-summer-campaign-gallery-3.svg",
-      "assets/images/projects/adventureland-summer-campaign-gallery-4.svg"
     ]
   }
 ]

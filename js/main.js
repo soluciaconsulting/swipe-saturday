@@ -199,6 +199,38 @@ function initVideoModal() {
   });
 }
 
+function initInlineVideoPlayback() {
+  document.addEventListener("click", (e) => {
+    const trigger = e.target.closest("[data-inline-video-trigger]");
+    if (!trigger) return;
+
+    const card = trigger.closest(".project-card");
+    const media = card?.querySelector(".project-card-media");
+    if (!media) return;
+
+    const img = media.querySelector("img");
+    const video = media.querySelector(".project-card-inline-video");
+    if (!video) return;
+
+    if (img) {
+      img.style.display = "none";
+    }
+
+    video.style.display = "block";
+    video.muted = true;
+    video.play().catch(() => {});
+    trigger.style.display = "none";
+
+    video.addEventListener("ended", () => {
+      if (img) {
+        img.style.display = "block";
+      }
+      video.style.display = "none";
+      trigger.style.display = "";
+    }, { once: true });
+  });
+}
+
 async function bootstrapPage() {
   await includePartials();
 
@@ -206,6 +238,7 @@ async function bootstrapPage() {
   initFAQAccordion();
   initLightbox();
   initVideoModal();
+  initInlineVideoPlayback();
   initSliders();
 
   // Data-driven sections resolve asynchronously; run lazyload + counters

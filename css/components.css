@@ -510,43 +510,6 @@
   100% { top: 100%; }
 }
 
-/* ---- Hero video slider (3 drone clips) ---- */
-.hero-slider {
-  position: absolute;
-  inset: 0;
-}
-
-.hero-slider .swiper-wrapper {
-  height: 100%;
-}
-
-.hero-slider .swiper-slide {
-  height: 100%;
-}
-
-.hero-slider-pagination {
-  position: absolute;
-  z-index: 3;
-  bottom: var(--space-4) !important;
-  left: 50% !important;
-  transform: translateX(-50%);
-  width: auto !important;
-  display: flex;
-  gap: 10px;
-}
-
-.hero-slider-pagination .swiper-pagination-bullet {
-  width: 10px;
-  height: 10px;
-  background: rgba(255, 255, 255, 0.5);
-  opacity: 1;
-  transition: background var(--duration-fast) var(--ease-out);
-}
-
-.hero-slider-pagination .swiper-pagination-bullet-active {
-  background: var(--color-brand-red);
-}
-
 /* ---- Service We Provide (3-column cards) ---- */
 .service-offer-grid {
   gap: var(--space-4);
@@ -662,7 +625,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: top;
   display: block;
 }
 
@@ -674,8 +637,12 @@
   margin-top: var(--space-8);
   text-align: center;
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: var(--space-4);
+}
+
+.section--dark .about-stat-row {
+  margin-top: 0;
 }
 
 .about-stat-value {
@@ -714,6 +681,36 @@
 
 .about-stat-meta .icon {
   color: var(--stat-color, var(--color-text));
+}
+
+.section--dark .about-stat-value {
+  color: var(--color-text-on-dark);
+}
+
+.section--dark .about-stat-meta {
+  color: var(--color-text-on-dark-secondary);
+}
+
+.section--dark .about-stat-bar {
+  background: var(--color-border-on-dark);
+}
+
+.credibility-band {
+  background: var(--color-bg);
+  max-width: var(--container-width);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+
+.credibility-band .container {
+  max-width: none;
+  padding-inline: var(--space-6);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  padding-block: var(--space-6);
+  background:
+    radial-gradient(ellipse 42% 200% at 50% 50%, rgba(211, 57, 43, 0.36), transparent 58%),
+    linear-gradient(180deg, #121212 0%, #050505 100%);
 }
 
 /* Generic page hero (non-video pages) */
@@ -1028,6 +1025,13 @@
   font-size: 1.4rem;
   font-weight: var(--fw-bold);
   letter-spacing: var(--ls-tight);
+}
+
+.project-card-stat {
+  margin-top: 0.15rem;
+  font-size: var(--fs-small);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-on-dark-secondary);
 }
 
 .project-card-desc {

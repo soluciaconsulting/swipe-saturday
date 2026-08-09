@@ -66,13 +66,22 @@ function featuredProjectCardHTML(project) {
           height="1125"
           loading="lazy"
         />
+        <video
+          class="project-card-inline-video"
+          muted
+          playsinline
+          controls
+          preload="metadata"
+          poster="${project.heroImage}"
+          style="display: none;"
+        >
+          <source src="${project.heroVideo}" type="video/mp4" />
+        </video>
       </div>
       <button
         type="button"
         class="project-card-play"
-        data-video-trigger
-        data-video-src="${project.heroVideo}"
-        data-video-poster="${project.heroImage}"
+        data-inline-video-trigger
         aria-label="Play ${project.title} video"
       >
         <i class="fa-solid fa-play"></i>
@@ -80,6 +89,7 @@ function featuredProjectCardHTML(project) {
       <div class="project-card-body">
         <span class="project-card-tag">${project.tags[0] || categoryLabel(project.categories[0])}</span>
         <h3 class="project-card-title">${project.title}</h3>
+        ${project.featuredStat ? `<span class="project-card-stat">${project.featuredStat}</span>` : ""}
         <p class="project-card-desc">${project.description}</p>
         <div class="project-card-actions">
           <a href="${instagramUrl}" target="_blank" rel="noopener noreferrer" class="project-card-cta">
