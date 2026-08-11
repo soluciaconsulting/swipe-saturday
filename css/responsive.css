@@ -40,6 +40,10 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .service-detail-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .project-grid {
     grid-template-columns: 1fr;
   }
@@ -132,6 +136,10 @@
   .grid-2,
   .grid-3,
   .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .service-detail-list {
     grid-template-columns: 1fr;
   }
 

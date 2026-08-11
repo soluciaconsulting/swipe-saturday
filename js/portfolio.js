@@ -55,9 +55,9 @@ function featuredProjectCardHTML(project) {
   const instagramUrl = project.instagramUrl || "https://instagram.com";
 
   return `
-    <article class="project-card" data-reveal data-categories="${project.categories.join(" ")}">
-      <a class="project-card-link" href="${instagramUrl}" target="_blank" rel="noopener noreferrer" aria-label="Open ${project.title} on Instagram"></a>
+    <article class="project-card project-card--featured" data-reveal data-categories="${project.categories.join(" ")}">
       <div class="project-card-media">
+        <a class="project-card-link" href="${instagramUrl}" target="_blank" rel="noopener noreferrer" aria-label="Open ${project.title} on Instagram"></a>
         <img
           data-lazy
           data-src="${project.thumbnail}"
@@ -77,25 +77,28 @@ function featuredProjectCardHTML(project) {
         >
           <source src="${project.heroVideo}" type="video/mp4" />
         </video>
+        <button
+          type="button"
+          class="project-card-play"
+          data-inline-video-trigger
+          aria-label="Play ${project.title} video"
+        >
+          <i class="fa-solid fa-play"></i>
+        </button>
       </div>
-      <button
-        type="button"
-        class="project-card-play"
-        data-inline-video-trigger
-        aria-label="Play ${project.title} video"
-      >
-        <i class="fa-solid fa-play"></i>
-      </button>
       <div class="project-card-body">
         <span class="project-card-tag">${project.tags[0] || categoryLabel(project.categories[0])}</span>
         <h3 class="project-card-title">${project.title}</h3>
         ${project.featuredStat ? `<span class="project-card-stat">${project.featuredStat}</span>` : ""}
         <p class="project-card-desc">${project.description}</p>
-        <div class="project-card-actions">
-          <a href="${instagramUrl}" target="_blank" rel="noopener noreferrer" class="project-card-cta">
-            View on Instagram <i class="fa-solid fa-arrow-right icon" aria-hidden="true"></i>
-          </a>
+      </div>
+      <div class="project-card-footer">
+        <div class="project-card-tags">
+          ${project.tags.map((tag) => `<span class="project-card-pill">${tag}</span>`).join("")}
         </div>
+        <a href="${instagramUrl}" target="_blank" rel="noopener noreferrer" class="project-card-cta">
+          View on Instagram <i class="fa-solid fa-arrow-right icon" aria-hidden="true"></i>
+        </a>
       </div>
     </article>
   `;
