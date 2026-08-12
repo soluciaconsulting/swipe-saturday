@@ -894,6 +894,8 @@
     filter var(--duration-base) var(--ease-out);
   display: flex;
   align-items: center;
+  border-radius: var(--radius-md);
+  overflow: hidden;
 }
 
 .marquee-item:hover {
