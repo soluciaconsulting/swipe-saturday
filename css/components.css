@@ -584,7 +584,7 @@
 }
 
 .service-detail-body {
-  padding: var(--space-4);
+  padding: var(--space-1);
   flex: 1;
 }
 
@@ -593,7 +593,7 @@
 }
 
 .service-detail-body .eyebrow {
-  margin-top: var(--space-3);
+  margin-top: var(--space-2);
 }
 
 .service-detail-body .h3 {
@@ -895,10 +895,8 @@
 .marquee-item {
   flex-shrink: 0;
   opacity: 0.55;
-  filter: grayscale(1);
   transition: opacity var(--duration-base) var(--ease-out),
     filter var(--duration-base) var(--ease-out);
-  height: 32px;
   display: flex;
   align-items: center;
 }
@@ -1116,7 +1114,7 @@
   right: 0;
   bottom: 0;
   z-index: 2;
-  padding: var(--space-4);
+  padding: var(--space-1);
   display: flex;
   flex-direction: column;
   gap: var(--space-1);

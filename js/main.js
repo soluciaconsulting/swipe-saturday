@@ -48,16 +48,20 @@ function initSmoothScroll() {
     smoothWheel: true,
   });
 
-  function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
-  requestAnimationFrame(raf);
-
-  if (window.ScrollTrigger) {
+  if (window.gsap && window.ScrollTrigger) {
+    // Let GSAP's ticker be the single driver so Lenis and ScrollTrigger
+    // stay on the same clock — running our own rAF loop alongside GSAP's
+    // ticker double-drives lenis.raf() each frame and causes stutter,
+    // most noticeable on slow scrolls.
     lenis.on("scroll", window.ScrollTrigger.update);
-    window.gsap?.ticker.add((time) => lenis.raf(time * 1000));
-    window.gsap?.ticker.lagSmoothing(0);
+    window.gsap.ticker.add((time) => lenis.raf(time * 1000));
+    window.gsap.ticker.lagSmoothing(0);
+  } else {
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
   }
 
   return lenis;
