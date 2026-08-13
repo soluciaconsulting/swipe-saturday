@@ -1440,13 +1440,13 @@
   font-weight: var(--fw-semibold);
   letter-spacing: var(--ls-wider);
   text-transform: uppercase;
-  color: var(--color-brand-red);
+  color: var(--color-accent-dark);
 }
 
 .feedback-subheading-line {
   width: 32px;
   height: 1px;
-  background: var(--color-brand-red);
+  background: var(--color-accent-dark);
   flex-shrink: 0;
 }
 
