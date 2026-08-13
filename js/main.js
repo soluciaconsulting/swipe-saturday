@@ -68,20 +68,39 @@ function initSmoothScroll() {
 }
 
 function initAnchorLinks(lenis) {
+  const scrollToTarget = (target, immediate = false) => {
+    if (lenis) {
+      lenis.scrollTo(target, { offset: -88, immediate });
+    } else {
+      target.scrollIntoView({ behavior: immediate ? "auto" : "smooth" });
+    }
+    target.setAttribute("tabindex", "-1");
+    target.focus({ preventScroll: true });
+  };
+
   qsa('a[href^="#"]:not([href="#"])').forEach((link) => {
     link.addEventListener("click", (e) => {
       const target = qs(link.getAttribute("href"));
       if (!target) return;
       e.preventDefault();
-      if (lenis) {
-        lenis.scrollTo(target, { offset: -88 });
-      } else {
-        target.scrollIntoView({ behavior: "smooth" });
-      }
-      target.setAttribute("tabindex", "-1");
-      target.focus({ preventScroll: true });
+      // Anchor scrolling stays JS-driven rather than letting the browser
+      // set location.hash, so the address bar never picks up a #section
+      // suffix during normal in-page navigation.
+      history.replaceState(null, "", window.location.pathname + window.location.search);
+      scrollToTarget(target);
     });
   });
+
+  // A direct/shared link (e.g. swipesaturday.com/#contact) still arrives
+  // with the hash already in the address bar before any JS runs — scroll
+  // to it, then strip it so the URL settles back to a clean root.
+  if (window.location.hash) {
+    const target = qs(window.location.hash);
+    if (target) {
+      history.replaceState(null, "", window.location.pathname + window.location.search);
+      requestAnimationFrame(() => scrollToTarget(target, true));
+    }
+  }
 }
 
 function initFAQAccordion() {
