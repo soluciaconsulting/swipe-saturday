@@ -1,11 +1,12 @@
 /**
- * Client-side validation and success-state handling for the contact form.
- * There is no backend in this static scaffold — on valid submit we show a
- * success state and fire a CustomEvent so a real endpoint (Formspree,
- * Netlify Forms, a serverless function, etc.) can be wired in later without
- * touching this validation logic. See README → "Contact form backend".
+ * Client-side validation for the contact form. The form posts natively to
+ * FormSubmit (see the `action` attribute in index.html); on success
+ * FormSubmit redirects back to `_next`, which points at this same page with
+ * a `?sent=1` marker so we can show the success panel after the redirect.
  */
 import { qs, qsa } from "./utils.js";
+
+const SENT_PARAM = "sent";
 
 const RULES = {
   name: (v) => v.trim().length >= 2 || "Please enter your name.",
@@ -60,18 +61,30 @@ export function initContactForm() {
   });
 
   form.addEventListener("submit", (e) => {
-    e.preventDefault();
     const allValid = fields.map(validateField).every(Boolean);
 
     if (!allValid) {
+      e.preventDefault();
       const firstInvalid = qs(".form-group.is-invalid input, .form-group.is-invalid select, .form-group.is-invalid textarea", form);
       firstInvalid?.focus();
       return;
     }
 
-    const data = Object.fromEntries(new FormData(form).entries());
-    window.dispatchEvent(new CustomEvent("swipe:contact-submit", { detail: data }));
-
-    showSuccess(form);
+    // Let the browser POST natively to FormSubmit; point _next back at this
+    // page with a marker so the redirect lands on the success panel below.
+    const nextField = qs("[data-next-field]", form);
+    if (nextField) {
+      const url = new URL(window.location.href);
+      url.hash = "contact";
+      url.searchParams.set(SENT_PARAM, "1");
+      nextField.value = url.toString();
+    }
   });
+
+  if (new URLSearchParams(window.location.search).get(SENT_PARAM) === "1") {
+    showSuccess(form);
+    const url = new URL(window.location.href);
+    url.searchParams.delete(SENT_PARAM);
+    history.replaceState(null, "", url.pathname + url.search + url.hash);
+  }
 }
