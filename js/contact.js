@@ -1,12 +1,10 @@
 /**
- * Client-side validation for the contact form. The form posts natively to
- * FormSubmit (see the `action` attribute in index.html); on success
- * FormSubmit redirects back to `_next`, which points at this same page with
- * a `?sent=1` marker so we can show the success panel after the redirect.
+ * Client-side validation and submission for the contact form. The form is
+ * posted to Formspree via fetch (instead of a native browser POST) so we can
+ * stay on the page, show our own `.form-success` panel, and clear the
+ * fields — rather than redirecting to Formspree's hosted thank-you page.
  */
 import { qs, qsa } from "./utils.js";
-
-const SENT_PARAM = "sent";
 
 const RULES = {
   name: (v) => v.trim().length >= 2 || "Please enter your name.",
@@ -33,6 +31,21 @@ function validateField(field) {
   return isValid;
 }
 
+function clearFieldStates(form) {
+  qsa(".form-group", form).forEach((group) => {
+    group.classList.remove("is-invalid");
+    const errorEl = qs(".form-error", group);
+    if (errorEl) errorEl.textContent = "";
+  });
+}
+
+function setStatus(form, message) {
+  const status = qs("[data-form-status]", form);
+  if (!status) return;
+  status.textContent = message;
+  status.style.display = message ? "block" : "none";
+}
+
 function showSuccess(form) {
   const success = qs("[data-form-success]", form.parentElement);
   form.classList.add("is-submitted");
@@ -50,6 +63,7 @@ export function initContactForm() {
   const fields = qsa("input[name], select[name], textarea[name]", form).filter(
     (f) => f.name in RULES
   );
+  const submitButton = qs('button[type="submit"]', form);
 
   fields.forEach((field) => {
     field.addEventListener("blur", () => validateField(field));
@@ -60,31 +74,35 @@ export function initContactForm() {
     });
   });
 
-  form.addEventListener("submit", (e) => {
-    const allValid = fields.map(validateField).every(Boolean);
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
+    const allValid = fields.map(validateField).every(Boolean);
     if (!allValid) {
-      e.preventDefault();
       const firstInvalid = qs(".form-group.is-invalid input, .form-group.is-invalid select, .form-group.is-invalid textarea", form);
       firstInvalid?.focus();
       return;
     }
 
-    // Let the browser POST natively to FormSubmit; point _next back at this
-    // page with a marker so the redirect lands on the success panel below.
-    const nextField = qs("[data-next-field]", form);
-    if (nextField) {
-      const url = new URL(window.location.href);
-      url.hash = "contact";
-      url.searchParams.set(SENT_PARAM, "1");
-      nextField.value = url.toString();
+    setStatus(form, "");
+    submitButton?.setAttribute("disabled", "true");
+
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+
+      if (!response.ok) throw new Error("Submission failed");
+
+      form.reset();
+      clearFieldStates(form);
+      showSuccess(form);
+    } catch {
+      setStatus(form, "Something went wrong sending your message. Please try again.");
+    } finally {
+      submitButton?.removeAttribute("disabled");
     }
   });
-
-  if (new URLSearchParams(window.location.search).get(SENT_PARAM) === "1") {
-    showSuccess(form);
-    const url = new URL(window.location.href);
-    url.searchParams.delete(SENT_PARAM);
-    history.replaceState(null, "", url.pathname + url.search + url.hash);
-  }
 }
