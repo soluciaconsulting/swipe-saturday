@@ -254,6 +254,25 @@ function initInlineVideoPlayback() {
   });
 }
 
+/**
+ * Native <video controls> normally needs a first tap just to reveal the
+ * control bar, then a second tap on its fullscreen icon to actually expand
+ * — so a single click on a gallery video jumps straight to fullscreen.
+ */
+function initGalleryFullscreen() {
+  qsa(".gallery-item video").forEach((video) => {
+    video.addEventListener("click", () => {
+      if (video.requestFullscreen) {
+        video.requestFullscreen().catch(() => {});
+      } else if (video.webkitEnterFullscreen) {
+        video.webkitEnterFullscreen();
+      } else if (video.webkitRequestFullscreen) {
+        video.webkitRequestFullscreen();
+      }
+    });
+  });
+}
+
 async function bootstrapPage() {
   await includePartials();
 
@@ -262,6 +281,7 @@ async function bootstrapPage() {
   initLightbox();
   initVideoModal();
   initInlineVideoPlayback();
+  initGalleryFullscreen();
   initSliders();
 
   // Data-driven sections resolve asynchronously; run lazyload + counters

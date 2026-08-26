@@ -112,6 +112,8 @@
   }
 
   .hero {
+    min-height: 640px;
+    min-height: 100svh;
     align-items: flex-end;
   }
 

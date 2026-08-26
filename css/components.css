@@ -411,12 +411,20 @@
 /* ---------------------------------------------------------------------- */
 .hero {
   position: relative;
-  height: 100svh;
-  min-height: 560px;
+  min-height: 420px;
+  min-height: 50svh;
   display: flex;
   align-items: flex-end;
   overflow: hidden;
   background: var(--color-surface-dark);
+}
+
+/* Reserve space for the fixed header so the bottom-anchored hero copy can
+   never sit underneath it on shorter viewports (e.g. some Chrome mobile
+   toolbar heights). Scoped to the page's top hero only, not the mid-page
+   drone hero, which isn't sitting directly under the fixed header. */
+main > .hero {
+  padding-top: var(--header-height);
 }
 
 .hero-media {
@@ -583,9 +591,38 @@
   object-fit: cover;
 }
 
+/* Instagram reel embeds are portrait and come with a fixed amount of
+   required Instagram chrome (header + action icons), so they can't fill
+   the same 16:9 cover box the plain <video> cards use. */
+.service-detail-media--instagram {
+  aspect-ratio: auto;
+  height: 300px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  background: var(--color-bg-alt);
+}
+
+.service-detail-media--instagram iframe {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  height: 500px;
+  margin-top: -70px;
+  border: 0;
+  flex-shrink: 0;
+}
+
 .service-detail-body {
+  display: flex;
+  flex-direction: column;
   padding: var(--space-2);
   flex: 1;
+}
+
+.service-detail-cta {
+  margin-top: auto;
+  padding-top: var(--space-3);
 }
 
 .service-detail-body .service-offer-icon {
@@ -1425,7 +1462,7 @@
 /* ---------------------------------------------------------------------- */
 /* Base Section Styles */
 .feedback-section {
-  background-color: #f8f8f6;
+  /* background-color: #f8f8f6; */
   padding: 60px 20px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   color: #333333;
