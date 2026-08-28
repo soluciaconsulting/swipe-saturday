@@ -255,21 +255,72 @@ function initInlineVideoPlayback() {
 }
 
 /**
- * Native <video controls> normally needs a first tap just to reveal the
- * control bar, then a second tap on its fullscreen icon to actually expand
- * — so a single click on a gallery video jumps straight to fullscreen.
+ * The gallery tiles show muted, looping Vimeo "background" embeds with no
+ * controls. A single click on one opens that video full screen in a proper
+ * player (sound + controls), rather than making people hunt for a control
+ * bar inside the cropped iframe.
  */
 function initGalleryFullscreen() {
-  qsa(".gallery-item video").forEach((video) => {
-    video.addEventListener("click", () => {
-      if (video.requestFullscreen) {
-        video.requestFullscreen().catch(() => {});
-      } else if (video.webkitEnterFullscreen) {
-        video.webkitEnterFullscreen();
-      } else if (video.webkitRequestFullscreen) {
-        video.webkitRequestFullscreen();
-      }
+  const wrappers = qsa(".gallery-item__video-wrapper");
+  if (!wrappers.length) return;
+
+  let overlay = null;
+
+  function closeOverlay() {
+    if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
+    if (overlay) {
+      overlay.remove();
+      overlay = null;
+      document.body.style.overflow = "";
+    }
+  }
+
+  function openOverlay(videoId) {
+    overlay = document.createElement("div");
+    overlay.className = "gallery-fs-overlay";
+
+    const player = document.createElement("iframe");
+    player.src = `https://player.vimeo.com/video/${videoId}?autoplay=1&title=0&byline=0&portrait=0`;
+    player.allow = "autoplay; fullscreen; picture-in-picture";
+    player.setAttribute("allowfullscreen", "");
+    player.className = "gallery-fs-overlay__frame";
+
+    const closeBtn = document.createElement("button");
+    closeBtn.type = "button";
+    closeBtn.className = "gallery-fs-overlay__close";
+    closeBtn.setAttribute("aria-label", "Close video");
+    closeBtn.innerHTML = '<i class="fa-solid fa-xmark" aria-hidden="true"></i>';
+    closeBtn.addEventListener("click", closeOverlay);
+
+    overlay.append(player, closeBtn);
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) closeOverlay();
     });
+
+    document.body.appendChild(overlay);
+    document.body.style.overflow = "hidden";
+
+    // Must be requested inside the click gesture. Desktop browsers expand
+    // the overlay to true full screen; where that's unsupported (iOS) the
+    // fixed overlay already covers the viewport.
+    const req = overlay.requestFullscreen || overlay.webkitRequestFullscreen;
+    if (req) Promise.resolve(req.call(overlay)).catch(() => {});
+  }
+
+  wrappers.forEach((wrapper) => {
+    const iframe = wrapper.querySelector("iframe");
+    const idMatch = iframe && iframe.src.match(/video\/(\d+)/);
+    if (!idMatch) return;
+
+    wrapper.style.cursor = "pointer";
+    wrapper.addEventListener("click", () => openOverlay(idMatch[1]));
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && overlay) closeOverlay();
+  });
+  document.addEventListener("fullscreenchange", () => {
+    if (!document.fullscreenElement && overlay) closeOverlay();
   });
 }
 
