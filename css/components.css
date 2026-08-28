@@ -465,6 +465,12 @@ main > .hero {
   max-width: 18ch;
 }
 
+@media (min-width: 769px) {
+  main > .hero .hero-title {
+    margin-top: var(--space-4);
+  }
+}
+
 .hero-sub {
   margin-top: var(--space-4);
   max-width: 46ch;
