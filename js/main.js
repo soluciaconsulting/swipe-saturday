@@ -255,6 +255,34 @@ function initInlineVideoPlayback() {
 }
 
 /**
+ * Portfolio "service detail" cards: a poster frame with a centered play
+ * button. Clicking play (or the video) starts the local clip inline, muted
+ * and looping; clicking again pauses it. Behavior is identical for every
+ * card since they all use a plain <video> element.
+ */
+function initServiceDetailVideos() {
+  qsa(".service-detail-card").forEach((card) => {
+    const video = card.querySelector(".service-detail-video");
+    const playBtn = card.querySelector(".service-detail-play");
+    if (!video || !playBtn) return;
+
+    const toggle = () => {
+      if (video.paused) {
+        video.muted = true;
+        video.play().catch(() => {});
+      } else {
+        video.pause();
+      }
+    };
+
+    playBtn.addEventListener("click", toggle);
+    video.addEventListener("click", toggle);
+    video.addEventListener("play", () => card.classList.add("is-playing"));
+    video.addEventListener("pause", () => card.classList.remove("is-playing"));
+  });
+}
+
+/**
  * The gallery tiles show muted, looping Vimeo "background" embeds with no
  * controls. A single click on one opens that video full screen in a proper
  * player (sound + controls), rather than making people hunt for a control
@@ -332,6 +360,7 @@ async function bootstrapPage() {
   initLightbox();
   initVideoModal();
   initInlineVideoPlayback();
+  initServiceDetailVideos();
   initGalleryFullscreen();
   initSliders();
 

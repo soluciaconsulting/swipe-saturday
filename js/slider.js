@@ -30,16 +30,7 @@ function buildConfig(el) {
     pagination: el.querySelector(".swiper-pagination")
       ? { el: el.querySelector(".swiper-pagination"), clickable: true }
       : false,
-    navigation: el.querySelector(".swiper-button-next")
-      ? {
-          nextEl: el.querySelector(".swiper-button-next"),
-          prevEl: el.querySelector(".swiper-button-prev"),
-        }
-      : false,
-    breakpoints: {
-      768: { slidesPerView: parseFloat(perViewTablet) },
-      1024: { slidesPerView: parseFloat(perViewDesktop) },
-    },
+    
   };
 }
 
